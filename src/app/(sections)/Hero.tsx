@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
       <div className="mx-auto px-2.5 h-full container">
         <div className="w-full h-full flex flex-col items-center justify-center gap-[32px] pt-46">
-          <div className="flex items-center gap-3 bg-white-transparent rounded-full p-2">
+          <div className="flex items-center gap-3 bg-white-transparent rounded-full p-2 shadow-xs">
             <div className="flex items-center gap-2">
               {customers.map((customer) => (
                 <div
@@ -110,7 +110,7 @@ export default function Hero() {
           </div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col items-center justify-center w-full gap-2">
-              <div className="flex items-center gap-1 w-fit h-12 border-2 border-grey bg-white rounded-full">
+              <div className="flex items-center gap-1 w-fit h-14 border-2 border-grey bg-white rounded-full p-1">
                 <div className="w-full h-full text-center">
                   <input
                     className="w-full h-full pl-2 outline-0"
