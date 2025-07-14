@@ -4,7 +4,7 @@ import { navItems } from "@/data/ui";
 
 export default function NavBar() {
   return (
-    <div className="w-full h-14 fixed top-2 left-0 z-50">
+    <div className="w-full h-14 md:h-16 fixed top-2 left-0 z-50">
       <nav className="container mx-auto px-2 w-[98%] h-full md:px-4 bg-white rounded-full shadow-xs">
         <div className="w-full h-full flex items-center justify-between">
           <div className="h-14 w-28 md:w-40">
