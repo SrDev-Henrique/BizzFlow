@@ -1,9 +1,9 @@
-import { CircleSlash, Check } from "lucide-react";
+import { Check, CircleSlash } from "lucide-react";
 
 const produtivity = {
   before: [
     {
-      content: "Lançamento manuais de ponto em planilhas",
+      content: "Lançamentos manuais de ponto em planilhas",
     },
     {
       content: "Cálculo de horas extras e faltas demorados",
@@ -29,7 +29,7 @@ const lgProdutivity = {
   before: [
     {
       id: 1,
-      content: "Lançamento manuais de ponto em planilhas",
+      content: "Lançamentos manuais de ponto em planilhas",
       icon: CircleSlash,
     },
     {

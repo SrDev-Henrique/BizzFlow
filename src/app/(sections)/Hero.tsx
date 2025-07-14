@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
       <div className="mx-auto px-2.5 h-full container">
         <div className="w-full h-full flex flex-col items-center justify-center gap-[32px] pt-46">
-          <div className="flex items-center gap-3 bg-white-transparent rounded-full p-2 shadow-xs">
+          <div className="flex items-center gap-3 bg-white rounded-full p-2 shadow-xs">
             <div className="flex items-center gap-2">
               {customers.map((customer) => (
                 <div
