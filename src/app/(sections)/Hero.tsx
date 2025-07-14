@@ -63,7 +63,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen text-black bg-gradient-to-b from-blue-transparent to-white-dark relative">
+    <div className="min-h-screen text-black bg-gradient-to-b from-blue-transparent to-transparent relative">
       <div
         className={classNames(
           "fixed right-[5%] top-[15%] flex items-center gap-1 opacity-0 bg-cian px-2 py-2 rounded-2xl text-base pointer-events-none z-[100] transition-opacity duration-500 ease-in-out",

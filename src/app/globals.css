@@ -12,10 +12,11 @@
   --orange-transparent: rgba(253, 138, 86, 0.55);
   --cian: #00c2c2;
   --blue: #0088ff;
-  --blue-transparent: rgba(0, 136, 255, 0.05);
+  --blue-transparent: rgba(0, 136, 255, 0.1);
   --cian-transparent: rgba(0, 194, 194, 0.25);
   --white: #ffffff;
   --white-dark: #f1f1f1;
+  --white-dark-transparent: rgba(241, 241, 241, 0.8);
   --off-white: #f5f7fa;
   --off-white-transparent: rgba(245, 247, 250, 0.99);
   --green: #49b195;
@@ -83,6 +84,7 @@
   --color-cian-transparent: var(--cian-transparent);
   --color-off-white: var(--off-white);
   --color-white-dark: var(--white-dark);
+  --color-white-dark-transparent: var(--white-dark-transparent);
   --color-off-white-transparent: var(--off-white-transparent);
   --color-green-light: var(--green-light);
   --color-green: var(--green);
@@ -101,7 +103,11 @@
 }
 
 body {
-  background: var(--white-dark);
+  background-color: var(--white-dark);
+  background-image: radial-gradient(#444cf780 0.5px, transparent 0.5px),
+    radial-gradient(#444cf780 0.5px, var(--white-dark) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
   color: var(--black);
   font-family: var(--font-primary);
 }
