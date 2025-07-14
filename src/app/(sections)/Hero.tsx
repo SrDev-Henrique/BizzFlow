@@ -5,8 +5,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useState } from "react";
+import { CalendarCheck } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import { GiConfirmed } from "react-icons/gi";
 import classNames from "classnames";
 
 export default function Hero() {
@@ -63,14 +63,14 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen text-black bg-gradient-to-bl from-blue-transparent to-white relative">
+    <div className="min-h-screen text-black bg-gradient-to-b from-blue-transparent to-white-dark relative">
       <div
         className={classNames(
           "fixed right-[5%] top-[15%] flex items-center gap-1 opacity-0 bg-cian px-2 py-2 rounded-2xl text-base pointer-events-none z-[100] transition-opacity duration-500 ease-in-out",
           submitStatus === "success" && "opacity-100 animate-fadeOut"
         )}
       >
-        <GiConfirmed className="text-green-light" />
+        <CalendarCheck className="text-green-light" />
         <p className="font-secondary text-white font-bold text-sm">
           Agendamento solicitado com sucesso
         </p>

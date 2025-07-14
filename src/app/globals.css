@@ -5,17 +5,19 @@
   --font-montserrat: "Montserrat", sans-serif;
   --black: #1e1f25;
   --black-blue: #2c323c;
-  --grey: #3b404d;
+  --grey: #6b6b6b;
   --yellow: #f2c94c;
-  --yelow-transparent: rgba(242, 201, 76, 0.65);
+  --yelow-transparent: rgba(242, 201, 76, 0.55);
   --orange: #fd8a56;
   --orange-transparent: rgba(253, 138, 86, 0.55);
   --cian: #00c2c2;
   --blue: #0088ff;
   --blue-transparent: rgba(0, 136, 255, 0.05);
   --cian-transparent: rgba(0, 194, 194, 0.25);
-  --white: #f5f7fa;
-  --white-transparent: rgba(245, 247, 250, 0.99);
+  --white: #ffffff;
+  --white-dark: #f1f1f1;
+  --off-white: #f5f7fa;
+  --off-white-transparent: rgba(245, 247, 250, 0.99);
   --green: #49b195;
   --green-light: #cdf27e;
   --green-light-transparent: rgba(205, 242, 126, 0.65);
@@ -79,8 +81,9 @@
   --color-blue: var(--blue);
   --color-blue-transparent: var(--blue-transparent);
   --color-cian-transparent: var(--cian-transparent);
-  --color-white: var(--white);
-  --color-white-transparent: var(--white-transparent);
+  --color-off-white: var(--off-white);
+  --color-white-dark: var(--white-dark);
+  --color-off-white-transparent: var(--off-white-transparent);
   --color-green-light: var(--green-light);
   --color-green: var(--green);
   --color-orange: var(--orange);
@@ -98,10 +101,9 @@
 }
 
 body {
-  background: var(--white);
+  background: var(--white-dark);
   color: var(--black);
   font-family: var(--font-primary);
-  /* overflow-x: hidden; */
 }
 
 html.lenis,
