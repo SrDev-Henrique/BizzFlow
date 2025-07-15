@@ -40,7 +40,7 @@ export function Cards() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-[16px]">
-                  <p className="font-secondary font-bold uppercase px-4 py-1 bg-yellow-transparent w-fit rounded-full text-black text-xs">
+                  <p className="font-secondary font-bold uppercase px-4 py-1 bg-yellow w-fit rounded-full text-black text-xs">
                     Depois
                   </p>
                   <div className="flex flex-col gap-[16px]">
@@ -51,7 +51,7 @@ export function Cards() {
                           key={content}
                           className="flex items-start gap-[8px] px-4 py-2 bg-white-dark w-full rounded-xl"
                         >
-                          <Check className="bg-yellow-transparent text-white rounded-full min-w-5.5 min-h-5.5" />
+                          <Check className="bg-yellow text-white rounded-full min-w-5.5 min-h-5.5" />
                           <p className="text-base text-black font-secondary font-medium">
                             {content}
                           </p>
@@ -92,7 +92,7 @@ export function Cards() {
                   </p>
                 </div>
                 <div className="flex items-center w-full">
-                  <p className="font-secondary font-bold uppercase px-4 py-1 bg-yellow-transparent w-fit rounded-full text-black text-xs">
+                  <p className="font-secondary font-bold uppercase px-4 py-1 bg-yellow w-fit rounded-full text-black text-xs">
                     Depois
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export function Cards() {
                         className={classNames(
                           "w-6 h-6",
                           index % 2 !== 0
-                            ? "bg-yellow-transparent text-white rounded-full"
+                            ? "bg-yellow text-white rounded-full"
                             : "text-grey opacity-60"
                         )}
                       />

@@ -25,7 +25,7 @@ export default function NavBar() {
               ))}
             </div>
             <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center font-bold uppercase text-xs rounded-full px-4.5 h-10 bg-cian text-white transition-all duration-300 hover:brightness-95 cursor-pointer">
+              <div className="flex items-center justify-center font-bold uppercase text-xs rounded-full px-4.5 h-10 bg-yellow text-black transition-all duration-300 hover:brightness-95 cursor-pointer">
                 <Link href="/cadastro">
                   <p>Comece grátis</p>
                 </Link>

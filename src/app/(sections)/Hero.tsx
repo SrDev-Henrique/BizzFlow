@@ -63,7 +63,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen text-black bg-gradient-to-b from-blue-transparent to-transparent relative">
+    <div className="min-h-screen text-black bg-gradient-to-b from-yellow-transparent to-transparent relative">
       <div
         className={classNames(
           "fixed right-[5%] top-[15%] flex items-center gap-1 opacity-0 bg-cian px-2 py-2 rounded-2xl text-base pointer-events-none z-[100] transition-opacity duration-500 ease-in-out",
@@ -123,10 +123,10 @@ export default function Hero() {
                 </div>
                 <button
                   type="submit"
-                  className="w-fit h-full bg-cian rounded-full flex items-center justify-center text-nowrap px-4 cursor-pointer"
+                  className="w-fit h-full bg-yellow rounded-full flex items-center justify-center text-nowrap px-4 cursor-pointer"
                   disabled={isSubmitting}
                 >
-                  <p className="text-white text-xs text- sm:text-sm md:text-base uppercase font-bold">
+                  <p className="text-black text-xs text- sm:text-sm md:text-base uppercase font-bold">
                     {isSubmitting ? "Enviando..." : "Agendar uma demo"}
                   </p>
                 </button>
