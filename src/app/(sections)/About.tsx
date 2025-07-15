@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -29,6 +30,16 @@ export default function About() {
               Com nossa solução, qualquer negócio pode focar no que realmente
               importa: cuidar do seu time.
             </p>
+            <button
+              type="button"
+              className="w-fit h-10 bg-cian rounded-full flex items-center justify-center text-nowrap px-4 cursor-pointer transition-all duration-300 hover:brightness-105"
+            >
+              <Link href="/">
+                <p className="text-white text-xs text- sm:text-sm md:text-base uppercase font-bold">
+                  Comece grátis
+                </p>
+              </Link>
+            </button>
           </div>
           <div className="w-[60%] max-w-[250px] aspect-[1/1.2] rounded-xl overflow-hidden lg:min-w-[400px] xl:min-w-[500px]">
             <Image
