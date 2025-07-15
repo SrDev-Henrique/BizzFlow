@@ -104,10 +104,13 @@
 
 body {
   background-color: var(--white-dark);
-  background-image: radial-gradient(#444cf780 0.5px, transparent 0.5px),
+  background-image:
+    radial-gradient(#444cf780 0.5px, transparent 0.5px),
     radial-gradient(#444cf780 0.5px, var(--white-dark) 0.5px);
   background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
+  background-position:
+    0 0,
+    10px 10px;
   color: var(--black);
   font-family: var(--font-primary);
 }
@@ -135,7 +138,7 @@ html.lenis body {
 
 @layer utilities {
   .nav-hover-btn {
-    @apply relative font-bold uppercase text-black after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 cursor-pointer;
+    @apply relative cursor-pointer font-bold text-black uppercase after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100;
   }
   .animate-fadeOut {
     animation: fadeOut 0.5s ease-in-out forwards;

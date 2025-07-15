@@ -50,7 +50,7 @@ export default function Hero() {
           message:
             "Olá. Vi que você está testando o meu site fictício da BizzFlow. Fico feliz que tenha se interessado. Caso queira um site parecido mande uma mensagem para este email ou para o meu telefone pessoal: (19) 994012785.",
         },
-        publicKey
+        publicKey,
       );
       setSubmitStatus("success");
       setEmail("");
@@ -63,57 +63,57 @@ export default function Hero() {
   };
 
   return (
-    <div className="min-h-screen text-black bg-gradient-to-b from-yellow-transparent to-transparent relative">
+    <div className="from-yellow-transparent relative min-h-screen bg-gradient-to-b to-transparent text-black">
       <div
         className={classNames(
-          "fixed right-[5%] top-[15%] flex items-center gap-1 opacity-0 bg-cian px-2 py-2 rounded-2xl text-base pointer-events-none z-[100] transition-opacity duration-500 ease-in-out",
-          submitStatus === "success" && "opacity-100 animate-fadeOut"
+          "bg-cian pointer-events-none fixed top-[15%] right-[5%] z-[100] flex items-center gap-1 rounded-2xl px-2 py-2 text-base opacity-0 transition-opacity duration-500 ease-in-out",
+          submitStatus === "success" && "animate-fadeOut opacity-100",
         )}
       >
         <CalendarCheck className="text-green-light" />
-        <p className="font-secondary text-white font-bold text-sm">
+        <p className="font-secondary text-sm font-bold text-white">
           Agendamento solicitado com sucesso
         </p>
       </div>
-      <div className="mx-auto px-2.5 h-full container">
-        <div className="w-full h-full flex flex-col items-center justify-center gap-[32px] pt-46">
-          <div className="flex items-center gap-3 bg-white rounded-full p-2 shadow-xs">
+      <div className="container mx-auto h-full px-2.5">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-[32px] pt-46">
+          <div className="flex items-center gap-3 rounded-full bg-white p-2 shadow-xs">
             <div className="flex items-center gap-2">
               {customers.map((customer) => (
                 <div
                   key={customer.alt}
-                  className="w-6 h-6 sm:w-9 sm:h-9 rounded-full bg-white overflow-hidden border-l-2 border-white [&:not(:first-child)]:ml-[-15px]"
+                  className="h-6 w-6 overflow-hidden rounded-full border-l-2 border-white bg-white sm:h-9 sm:w-9 [&:not(:first-child)]:ml-[-15px]"
                 >
                   <Image
                     src={customer.image}
                     alt={customer.alt}
                     width={100}
                     height={100}
-                    className="w-full h-full object-cover object-center"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
               ))}
             </div>
-            <p className="text-xs sm:text-base md:text-xl text-black font-secondary">
+            <p className="font-secondary text-xs text-black sm:text-base md:text-xl">
               +1.000 clientes ativos
             </p>
           </div>
-          <div className="flex flex-col gap-[16px] text-center items-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium max-w-5xl">
+          <div className="flex flex-col items-center gap-[16px] text-center">
+            <h1 className="max-w-5xl text-4xl font-medium sm:text-5xl md:text-6xl">
               Recursos Humanos na palma da sua mão.
             </h1>
-            <p className="text-sm sm:text-base md:text-xl max-w-sm sm:max-w-md md:max-w-2xl font-secondary">
+            <p className="font-secondary max-w-sm text-sm sm:max-w-md sm:text-base md:max-w-2xl md:text-xl">
               Com a BizzFlow, você gerencia ponto, folha de pagamento e
               recrutamento num só painel — fácil de usar, totalmente integrado e
               pensado para colocar seu time no centro do negócio.
             </p>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col items-center justify-center w-full gap-2">
-              <div className="flex items-center gap-1 w-fit h-14 border-2 border-grey bg-white rounded-full p-1">
-                <div className="w-full h-full text-center">
+            <div className="flex w-full flex-col items-center justify-center gap-2">
+              <div className="border-grey flex h-14 w-fit items-center gap-1 rounded-full border-2 bg-white p-1">
+                <div className="h-full w-full text-center">
                   <input
-                    className="w-full h-full pl-2 outline-0"
+                    className="h-full w-full pl-2 outline-0"
                     type="email"
                     placeholder="Digite seu email"
                     value={email}
@@ -123,10 +123,10 @@ export default function Hero() {
                 </div>
                 <button
                   type="submit"
-                  className="w-fit h-full bg-yellow rounded-full flex items-center justify-center text-nowrap px-4 cursor-pointer"
+                  className="bg-yellow flex h-full w-fit cursor-pointer items-center justify-center rounded-full px-4 text-nowrap"
                   disabled={isSubmitting}
                 >
-                  <p className="text-black text-xs text- sm:text-sm md:text-base uppercase font-bold">
+                  <p className="text- text-xs font-bold text-black uppercase sm:text-sm md:text-base">
                     {isSubmitting ? "Enviando..." : "Agendar uma demo"}
                   </p>
                 </button>
@@ -136,14 +136,14 @@ export default function Hero() {
           <motion.div
             ref={targetRef}
             style={{ scale }}
-            className="w-[100%] h-auto aspect-[16/10] mt-10"
+            className="mt-10 aspect-[16/10] h-auto w-[100%]"
           >
             <Image
               src="/images/dashboards/upscaled/hero.webp"
               alt="Hero Image"
               width={1504}
               height={1128}
-              className="w-full h-full object-contain object-center rounded-xl"
+              className="h-full w-full rounded-xl object-contain object-center"
             />
           </motion.div>
         </div>
