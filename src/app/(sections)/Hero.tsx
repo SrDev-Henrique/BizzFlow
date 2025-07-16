@@ -75,7 +75,7 @@ export default function Hero() {
           Agendamento solicitado com sucesso
         </p>
       </div>
-      <div className="container mx-auto h-full px-2.5">
+      <div className="mx-auto h-full w-[94%] max-w-[1400px]">
         <div className="flex h-full w-full flex-col items-center justify-center gap-[32px] pt-46">
           <div className="flex items-center gap-3 rounded-full bg-white p-2 shadow-xs">
             <div className="flex items-center gap-2">

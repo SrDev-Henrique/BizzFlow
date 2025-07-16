@@ -16,7 +16,7 @@ export default function About() {
             />
           </div>
           <div className="flex h-fit w-[80%] max-w-[500px] flex-col items-center justify-between gap-[16px] text-center lg:min-w-[400px]">
-            <h2 className="font-primary text-black-blue mb-[8px] max-w-[360px] text-3xl font-medium lg:text-4xl">
+            <h2 className="font-primary text-black-blue mb-[8px] max-w-[450px] text-3xl font-medium lg:text-4xl">
               Empoderando equipes{" "}
               <span className="inline-block scale-150 font-light">+</span>{" "}
               simplificando a gestão de pessoas

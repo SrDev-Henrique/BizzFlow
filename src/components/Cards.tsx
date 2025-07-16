@@ -79,7 +79,7 @@ export function Cards() {
         return (
           <div
             key={title}
-            className="hidden w-full flex-col gap-[16px] rounded-3xl bg-white p-[32px] md:flex-row md:p-[5%] lg:flex lg:h-[95vh]"
+            className="hidden max-h-[800px] w-full flex-col gap-[16px] rounded-3xl bg-white p-[32px] md:flex-row md:p-[5%] lg:flex lg:h-[95vh]"
           >
             <div className="flex flex-col gap-[16px]">
               <h2 className="font-primary mb-6 text-4xl font-medium">
