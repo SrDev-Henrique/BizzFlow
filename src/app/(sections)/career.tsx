@@ -1,0 +1,20 @@
+export default function Career() {
+  return (
+    <div className="bg-white-dark mt-[96px] h-full w-full overflow-x-hidden md:mt-[128px] lg:mt-[160px]">
+      <div className="container mx-auto flex flex-col items-center justify-center gap-[32px]">
+        <div className="flex flex-col items-center justify-center gap-[16px] text-center">
+          <p className="font-secondary bg-orange-transparent w-fit rounded-full px-2 py-1 text-xs font-medium text-black uppercase">
+            Junte-se ao time
+          </p>
+          <h2 className="font-primary text-black-blue max-w-lg text-3xl font-medium lg:text-4xl">
+            Décadas de experiência criando plataformas
+          </h2>
+          <p className="font-secondary text-grey max-w-lg text-base font-medium sm:text-lg">
+            Junte-se a nossa equipe e ajude a transformar a gestão de pessoas em
+            uma experiência simples e eficiente.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
