@@ -16,7 +16,7 @@ export default function Footer() {
             />
           </Link>
         </div>
-        <Link href="/">
+        <Link href="https://github.com/SrDev-Henrique" target="_blank">
           <p className="font-secondary text-grey gap-1 text-xs font-bold lg:flex lg:text-nowrap">
             Desenvolvido por{" "}
             <span className="text-black-blue hover:underline">
