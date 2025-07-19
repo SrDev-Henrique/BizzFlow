@@ -139,7 +139,7 @@ export default function Hero() {
             className="mt-10 aspect-[16/10] h-auto w-[100%]"
           >
             <Image
-              src="/images/dashboards/upscaled/hero.webp"
+              src="/images/dashboards/hero.webp"
               alt="Hero Image"
               width={1504}
               height={1128}
