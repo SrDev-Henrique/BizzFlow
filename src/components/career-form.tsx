@@ -3,13 +3,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "./ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import {
   Select,
   SelectContent,
@@ -61,7 +55,7 @@ export function CareerForm() {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormControl className="h-[50px] w-full bg-white-dark">
+                  <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
                     <Input {...field} placeholder="Digite seu nome" />
                   </FormControl>
                   <FormMessage />
@@ -75,7 +69,7 @@ export function CareerForm() {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormControl className="h-[50px] w-full bg-white-dark">
+                  <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
                     <Input {...field} placeholder="Digite seu sobrenome" />
                   </FormControl>
                   <FormMessage />
@@ -89,7 +83,7 @@ export function CareerForm() {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormControl className="h-[50px] w-full bg-white-dark">
+                  <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
                     <Input {...field} placeholder="Digite o email" />
                   </FormControl>
                   <FormMessage />
@@ -104,7 +98,7 @@ export function CareerForm() {
               <FormItem>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
-                    <SelectTrigger className="w-full bg-white-dark">
+                    <SelectTrigger className="bg-white-dark border-black-transparent w-full border">
                       <SelectValue placeholder="Eu sou um..." />
                     </SelectTrigger>
                   </FormControl>
@@ -124,7 +118,7 @@ export function CareerForm() {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormControl className="h-[100px] w-full bg-white-dark">
+                  <FormControl className="bg-white-dark border-black-transparent h-[100px] w-full border">
                     <Textarea {...field} placeholder="Digite uma mensagem" />
                   </FormControl>
                   <FormMessage />
