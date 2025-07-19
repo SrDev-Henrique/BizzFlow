@@ -21,7 +21,7 @@ export default function NavBar() {
           <div className="flex items-center gap-4">
             <div className="hidden items-center gap-2 font-semibold md:flex">
               {navItems.map((item) => (
-                <Link href={`#${item}`} key={item}>
+                <Link href={item === "Blog" ? "/blog" : `#${item}`} key={item}>
                   <p className="nav-hover-btn text-black">{item}</p>
                 </Link>
               ))}
