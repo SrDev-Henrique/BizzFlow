@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="mt-[96px] h-full w-full overflow-x-hidden md:mt-[128px] lg:mt-[160px]">
+    <section id="Nós" className="mt-[96px] h-full w-full overflow-x-hidden md:mt-[128px] lg:mt-[160px]">
       <div className="container mx-auto flex h-full w-[98%] justify-center px-2">
         <div className="flex h-full w-full flex-col items-center justify-between gap-[48px] lg:min-w-screen lg:flex-row lg:justify-center lg:gap-[72px] lg:px-2 xl:gap-[128px]">
           <div className="aspect-[1/1.2] w-[60%] max-w-[250px] overflow-hidden rounded-xl lg:min-w-[400px] xl:min-w-[500px]">
@@ -52,6 +52,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

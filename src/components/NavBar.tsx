@@ -8,13 +8,15 @@ export default function NavBar() {
       <nav className="container mx-auto h-full w-[98%] rounded-full bg-white px-2 shadow-xs md:px-4">
         <div className="flex h-full w-full items-center justify-between">
           <div className="h-14 w-28 md:w-40">
-            <Image
-              src="/images/logos/LOGO-BLACK-TRANSPARENT.svg"
-              alt="BizzFlow"
-              width={100}
-              height={100}
-              className="h-full w-full scale-[150%] object-cover object-left"
-            />
+            <Link href="/">
+              <Image
+                src="/images/logos/LOGO-BLACK-TRANSPARENT.svg"
+                alt="BizzFlow"
+                width={100}
+                height={100}
+                className="h-full w-full scale-[150%] object-cover object-left"
+              />
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden items-center gap-2 font-semibold md:flex">

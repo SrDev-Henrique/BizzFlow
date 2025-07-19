@@ -143,6 +143,7 @@ body {
     10px 10px;
   color: var(--black);
   font-family: var(--font-primary);
+  scroll-behavior: smooth;
 }
 
 html.lenis,
