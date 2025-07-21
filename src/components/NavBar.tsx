@@ -26,6 +26,11 @@ export default function NavBar() {
                 </Link>
               ))}
             </div>
+            <div className="flex md:hidden">
+              <Link href="/blog">
+                <p className="nav-hover-btn text-black">Blog</p>
+              </Link>
+            </div>
             <div className="flex items-center gap-2">
               <div className="bg-yellow flex h-10 cursor-pointer items-center justify-center rounded-full px-4.5 text-xs font-bold text-black uppercase transition-all duration-300 hover:brightness-95">
                 <Link href="/cadastro">
