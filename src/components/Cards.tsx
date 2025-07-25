@@ -138,7 +138,7 @@ export function Cards() {
                           "h-6 w-6",
                           index % 2 !== 0
                             ? "text-grey opacity-60"
-                            : "bg-yellow-transparent rounded-full text-white",
+                            : "bg-yellow rounded-full text-white",
                         )}
                       />
                       <p
