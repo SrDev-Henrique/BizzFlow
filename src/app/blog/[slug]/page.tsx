@@ -96,7 +96,7 @@ export default async function PostPage({ params }: Params) {
             />
           </div>
         </div>
-        <article className="prose dark:prose-invert prose-li:marker:text-yellow lg:prose-xl mt-10 max-w-4xl">
+        <article className="prose dark:prose-invert prose-li:marker:text-yellow prose-a:text-cian lg:prose-xl mt-10 max-w-4xl">
           <PortableText value={post.body} />
         </article>
       </div>

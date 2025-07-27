@@ -61,7 +61,7 @@ export default function NavBar() {
       ref={navContainerRef}
       className="bg-primary-foreground fixed top-0 right-0 left-0 z-50 mx-auto mt-2 w-[96%] max-w-7xl rounded-xl border-b px-4 md:px-6"
     >
-      <div className="mx-auto flex h-16 max-w-4xl items-center justify-between gap-4">
+      <div className="flex h-16 items-center justify-between gap-4">
         <div className="flex flex-1 items-center gap-2">
           <Popover>
             <PopoverTrigger asChild>

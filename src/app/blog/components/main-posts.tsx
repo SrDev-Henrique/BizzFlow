@@ -21,7 +21,7 @@ async function getData() {
             estimatedTime,
             mainImage,
             "currentSlug": slug.current,
-            "currentDate": _publishedAt,
+            "currentDate": _createdAt,
             categories[]->{
             _id,
                 title,
@@ -96,7 +96,7 @@ export default async function MainPosts() {
                 </CardTitle>
                 <CardDescription>
                   <p>
-                    {new Date(post.currentDate).toDateString()} |{" "}
+                    {new Date(post.currentDate).toLocaleDateString()} |{" "}
                     {post.estimatedTime}
                   </p>
                 </CardDescription>
