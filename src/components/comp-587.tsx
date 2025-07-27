@@ -1,29 +1,29 @@
-import { useId } from "react"
-import { HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react"
+import { useId } from "react";
+import { HouseIcon, InboxIcon, SearchIcon, ZapIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
   { href: "#", label: "Home", icon: HouseIcon, active: true },
   { href: "#", label: "Inbox", icon: InboxIcon },
   { href: "#", label: "Insights", icon: ZapIcon },
-]
+];
 
 export default function Component() {
-  const id = useId()
+  const id = useId();
 
   return (
     <header className="border-b px-4 md:px-6">
@@ -70,7 +70,7 @@ export default function Component() {
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link) => {
-                    const Icon = link.icon
+                    const Icon = link.icon;
                     return (
                       <NavigationMenuItem key={link.href} className="w-full">
                         <NavigationMenuLink
@@ -86,7 +86,7 @@ export default function Component() {
                           <span>{link.label}</span>
                         </NavigationMenuLink>
                       </NavigationMenuItem>
-                    )
+                    );
                   })}
                 </NavigationMenuList>
               </NavigationMenu>
@@ -97,7 +97,7 @@ export default function Component() {
         <NavigationMenu className="max-md:hidden">
           <NavigationMenuList className="gap-2">
             {navigationLinks.map((link) => {
-              const Icon = link.icon
+              const Icon = link.icon;
               return (
                 <NavigationMenuItem key={link.href}>
                   <NavigationMenuLink
@@ -113,7 +113,7 @@ export default function Component() {
                     <span>{link.label}</span>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-              )
+              );
             })}
           </NavigationMenuList>
         </NavigationMenu>
@@ -133,5 +133,5 @@ export default function Component() {
         </div>
       </div>
     </header>
-  )
+  );
 }

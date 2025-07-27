@@ -1,7 +1,8 @@
 "use client";
 
-import { useId } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { HouseIcon, InboxIcon, SearchIcon, FileText } from "lucide-react";
+import { useWindowScroll } from "react-use";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,6 +20,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+
+import { navVariants } from "./anime";
 
 const navigationLinks = [
   { href: "/blog", label: "Blog", icon: HouseIcon, active: true, id: "1" },
@@ -30,9 +34,34 @@ export default function NavBar() {
   const id = useId();
   const pathname = usePathname();
 
+  const [isNavVisible, setIsNavVisible] = useState(true);
+
+  const navContainerRef = useRef<HTMLDivElement>(null);
+
+  const lastScrollYRef = useRef(0);
+
+  const { y: currentScrollY } = useWindowScroll();
+
+  useEffect(() => {
+    if (currentScrollY === 0) {
+      setIsNavVisible(true);
+    } else if (currentScrollY > lastScrollYRef.current) {
+      setIsNavVisible(false);
+    } else if (currentScrollY < lastScrollYRef.current) {
+      setIsNavVisible(true);
+    }
+    lastScrollYRef.current = currentScrollY;
+  }, [currentScrollY]);
+
   return (
-    <header className="border-b rounded-xl bg-primary-foreground px-4 mt-2 mx-2 md:px-6">
-      <div className="flex h-16 items-center justify-between gap-4">
+    <motion.header
+      variants={navVariants}
+      initial="visible"
+      animate={isNavVisible ? "visible" : "hidden"}
+      ref={navContainerRef}
+      className="bg-primary-foreground fixed top-0 right-0 left-0 z-50 mx-auto mt-2 w-[96%] max-w-7xl rounded-xl border-b px-4 md:px-6"
+    >
+      <div className="mx-auto flex h-16 max-w-4xl items-center justify-between gap-4">
         <div className="flex flex-1 items-center gap-2">
           <Popover>
             <PopoverTrigger asChild>
@@ -96,7 +125,7 @@ export default function NavBar() {
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-          <div className="flex items-center justify-start p-1 rounded-full bg-primary">
+          <div className="bg-primary flex items-center justify-start rounded-full p-1">
             <Link href="/">
               <Image
                 src="/images/logos/LOGO-ICON.svg"
@@ -135,7 +164,7 @@ export default function NavBar() {
             <Input
               id={id}
               className="peer h-8 ps-8 pe-2"
-              placeholder="Search..."
+              placeholder="Buscar..."
               type="search"
             />
             <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
@@ -144,6 +173,6 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
