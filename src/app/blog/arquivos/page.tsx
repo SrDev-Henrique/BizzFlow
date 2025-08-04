@@ -1,7 +1,7 @@
 import { client, urlFor } from "@/lib/sanity";
 import type { SanityPosts } from "@/types/sanityTypes";
 import Image from "next/image";
-import Wrapper from "../components/wrapper";
+import Wrapper from "../../../components/wrapper";
 import Link from "next/link";
 
 async function getData() {

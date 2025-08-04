@@ -66,12 +66,12 @@ export default function Hero() {
     <div className="from-yellow-transparent relative min-h-screen bg-gradient-to-b to-transparent text-black">
       <div
         className={classNames(
-          "bg-cian pointer-events-none fixed top-[15%] right-[5%] z-[100] flex items-center gap-1 rounded-2xl px-2 py-2 text-base opacity-0 transition-opacity duration-500 ease-in-out",
+          "bg-background pointer-events-none fixed top-[15%] right-[5%] z-[100] flex items-center gap-1 rounded-2xl px-2 py-2 text-base opacity-0 transition-opacity duration-500 ease-in-out",
           submitStatus === "success" && "animate-fadeOut opacity-100",
         )}
       >
-        <CalendarCheck className="text-green-light" />
-        <p className="font-secondary text-sm font-bold text-white">
+        <CalendarCheck className="text-green" />
+        <p className="font-secondary text-sm font-bold text-foreground">
           Agendamento solicitado com sucesso
         </p>
       </div>
@@ -82,7 +82,7 @@ export default function Hero() {
               {customers.map((customer) => (
                 <div
                   key={customer.alt}
-                  className="h-6 w-6 overflow-hidden rounded-full border-l-2 border-white bg-white sm:h-9 sm:w-9 [&:not(:first-child)]:ml-[-15px]"
+                  className="h-6 w-6 overflow-hidden rounded-full border-l-2 border-white bg-white sm:h-8 sm:w-8 [&:not(:first-child)]:ml-[-15px]"
                 >
                   <Image
                     src={customer.image}
@@ -94,7 +94,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <p className="font-secondary text-xs text-black sm:text-base md:text-xl">
+            <p className="font-secondary text-xs text-black sm:text-base md:text-lg">
               +1.000 clientes ativos
             </p>
           </div>

@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "@/components/footer";
 
 export default function BlogLayout({
   children,
@@ -9,6 +10,7 @@ export default function BlogLayout({
     <div>
       <NavBar />
       {children}
+      <Footer />
     </div>
   );
 }

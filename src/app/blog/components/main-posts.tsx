@@ -37,7 +37,7 @@ export default async function MainPosts() {
   const posts: SanityPosts[] = await getData();
 
   return (
-    <div className="flex w-full flex-col px-4">
+    <div className="flex w-full flex-col">
       <div className="mb-8 flex flex-col space-y-4">
         <h1 className="text-4xl font-bold">Blog da BizzFlow</h1>
         <p className="text-muted-foreground text-lg">
