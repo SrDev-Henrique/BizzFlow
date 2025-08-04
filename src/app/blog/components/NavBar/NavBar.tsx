@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { HouseIcon, InboxIcon, SearchIcon, FileText } from "lucide-react";
+import { HouseIcon, InboxIcon, SearchIcon } from "lucide-react";
 import { useWindowScroll } from "react-use";
 
 import { Button } from "@/components/ui/button";
@@ -27,7 +27,6 @@ import { navVariants } from "./anime";
 const navigationLinks = [
   { href: "/blog", label: "Blog", icon: HouseIcon, active: true, id: "1" },
   { href: "/blog/arquivos", label: "Arquivos", icon: InboxIcon, id: "2" },
-  { href: "/blog/sobre", label: "Sobre", icon: FileText, id: "3" },
 ];
 
 export default function NavBar() {
