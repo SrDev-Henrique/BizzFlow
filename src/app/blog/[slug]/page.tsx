@@ -9,12 +9,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
 async function getData(slug: string) {
   const query = `
     *[_type == 'post' && slug.current == '${slug}'] {
@@ -40,7 +34,11 @@ async function getData(slug: string) {
   return data;
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const post = await getData(slug);
   if (!post) return {};
@@ -50,7 +48,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-export default async function PostPage({ params }: Params) {
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post: SanityPost = await getData(slug);
   if (!post) return notFound();
