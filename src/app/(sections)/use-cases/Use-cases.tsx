@@ -16,15 +16,15 @@ export default function UseCases() {
       </div>
       <div className="flex h-full w-fit min-w-[45%] flex-col items-start justify-between gap-[48px]">
         {useCasesData.map((useCase) => {
-          const Icon = useCase.icon;
+          const {icon: Icon, title, text} = useCase;
           return (
             <RenderCases
-              key={useCase.title}
+              key={title}
               icon={
                 <Icon className="min-h-[48px] min-w-[48px] md:min-h-[64px] md:min-w-[64px]" />
               }
-              title={useCase.title}
-              text={useCase.text}
+              title={title}
+              text={text}
             />
           );
         })}
