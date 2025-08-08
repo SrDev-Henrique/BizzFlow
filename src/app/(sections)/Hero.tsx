@@ -8,6 +8,12 @@ import { useState } from "react";
 import { CalendarCheck } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import classNames from "classnames";
+import {
+  fadeInVariants,
+  fadeUpVariants,
+  reviewContainerVariants,
+  reviewImagesVariants,
+} from "./anime";
 
 export default function Hero() {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -71,16 +77,25 @@ export default function Hero() {
         )}
       >
         <CalendarCheck className="text-green" />
-        <p className="font-secondary text-sm font-bold text-foreground">
+        <p className="font-secondary text-foreground text-sm font-bold">
           Agendamento solicitado com sucesso
         </p>
       </div>
       <div className="mx-auto h-full w-[94%] max-w-[1400px]">
         <div className="flex h-full w-full flex-col items-center justify-center gap-[32px] pt-46">
-          <div className="flex items-center gap-3 rounded-full bg-white p-2 shadow-xs">
+          <motion.div
+            variants={reviewContainerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex origin-center items-center gap-3 rounded-full bg-white p-2 shadow-xs"
+          >
             <div className="flex items-center gap-2">
-              {customers.map((customer) => (
-                <div
+              {customers.map((customer, index) => (
+                <motion.div
+                  variants={reviewImagesVariants}
+                  custom={index}
+                  initial="hidden"
+                  animate="visible"
                   key={customer.alt}
                   className="h-6 w-6 overflow-hidden rounded-full border-l-2 border-white bg-white sm:h-8 sm:w-8 [&:not(:first-child)]:ml-[-15px]"
                 >
@@ -91,24 +106,48 @@ export default function Hero() {
                     height={100}
                     className="h-full w-full object-cover object-center"
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
-            <p className="font-secondary text-xs text-black sm:text-base md:text-lg">
+            <motion.p
+              variants={fadeInVariants}
+              custom={1.5}
+              initial="hidden"
+              animate="visible"
+              className="font-secondary text-xs text-black sm:text-base md:text-lg"
+            >
               +1.000 clientes ativos
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           <div className="flex flex-col items-center gap-[16px] text-center">
-            <h1 className="max-w-5xl text-4xl font-medium sm:text-5xl md:text-6xl">
+            <motion.h1
+              variants={fadeUpVariants}
+              custom={0.6}
+              initial="hidden"
+              animate="visible"
+              className="max-w-5xl text-4xl font-medium sm:text-5xl md:text-6xl"
+            >
               Recursos Humanos na palma da sua mão.
-            </h1>
-            <p className="font-secondary max-w-sm text-sm sm:max-w-md sm:text-base md:max-w-2xl md:text-xl">
+            </motion.h1>
+            <motion.p
+              variants={fadeUpVariants}
+              custom={0.8}
+              initial="hidden"
+              animate="visible"
+              className="font-secondary max-w-sm text-sm sm:max-w-md sm:text-base md:max-w-2xl md:text-xl"
+            >
               Com a BizzFlow, você gerencia ponto, folha de pagamento e
               recrutamento num só painel — fácil de usar, totalmente integrado e
               pensado para colocar seu time no centro do negócio.
-            </p>
+            </motion.p>
           </div>
-          <form onSubmit={handleSubmit}>
+          <motion.form
+            variants={fadeUpVariants}
+            custom={1}
+            initial="hidden"
+            animate="visible"
+            onSubmit={handleSubmit}
+          >
             <div className="flex w-full flex-col items-center justify-center gap-2">
               <div className="border-grey flex h-14 w-fit items-center gap-1 rounded-full border-2 bg-white p-1">
                 <div className="h-full w-full text-center">
@@ -132,10 +171,14 @@ export default function Hero() {
                 </button>
               </div>
             </div>
-          </form>
+          </motion.form>
           <motion.div
             ref={targetRef}
             style={{ scale }}
+            variants={fadeUpVariants}
+            custom={1.2}
+            initial="hidden"
+            animate="visible"
             className="mt-10 aspect-[16/10] h-auto w-[100%]"
           >
             <Image

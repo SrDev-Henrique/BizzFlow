@@ -1,13 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { navItems } from "@/data/ui";
+import { motion } from "framer-motion";
+
+import { navVariants } from "@/app/blog/components/NavBar/anime";
+import { fadeInVariants } from "@/app/(sections)/anime";
 
 export default function NavBar() {
   return (
-    <div className="fixed top-2 left-0 z-50 h-14 w-full md:h-16">
+    <motion.div
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
+      className="fixed top-2 left-0 z-50 h-14 w-full md:h-16"
+    >
       <nav className="container mx-auto h-full w-[98%] rounded-full bg-white px-2 shadow-xs md:px-4">
         <div className="flex h-full w-full items-center justify-between">
-          <div className="h-14 w-28 md:w-40">
+          <motion.div
+            variants={fadeInVariants}
+            custom={0.2}
+            initial="hidden"
+            animate="visible"
+            className="h-14 w-28 md:w-40"
+          >
             <Link href="/">
               <Image
                 src="/images/logos/LOGO-BLACK-TRANSPARENT.svg"
@@ -17,12 +34,18 @@ export default function NavBar() {
                 className="h-full w-full scale-[150%] object-cover object-left"
               />
             </Link>
-          </div>
+          </motion.div>
           <div className="flex items-center gap-4">
             <div className="hidden items-center gap-2 font-semibold md:flex">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <Link href={item === "Blog" ? "/blog" : `#${item}`} key={item}>
-                  <p className="nav-hover-btn text-black">{item}</p>
+                  <motion.p
+                    variants={fadeInVariants}
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    className="nav-hover-btn text-black"
+                  >{item}</motion.p>
                 </Link>
               ))}
             </div>
@@ -41,6 +64,6 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-    </div>
+    </motion.div>
   );
 }
