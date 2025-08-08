@@ -1,3 +1,9 @@
+"use client";
+
+import { fadeUpVariants } from "@/components/Cards/anime";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function RenderCases({
   icon,
   title,
@@ -7,8 +13,16 @@ export default function RenderCases({
   title: string;
   text: string;
 }) {
+  const caseRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(caseRef, { once: true, amount: 0.5 });
   return (
-    <div className="bg-yellow-transparent flex w-fit items-start gap-[8px] rounded-2xl p-[16px]">
+    <motion.div
+      ref={caseRef}
+      variants={fadeUpVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className="bg-yellow-transparent flex w-fit items-start gap-[8px] rounded-2xl p-[16px]"
+    >
       {icon}
       <div>
         <h3 className="text-base font-medium md:text-lg">{title}</h3>
@@ -16,6 +30,6 @@ export default function RenderCases({
           {text}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
