@@ -1,7 +1,48 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useInView, motion, cubicBezier } from "framer-motion";
+import { useRef } from "react";
+
+const fadeInVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: cubicBezier(0.215, 0.61, 0.355, 1),
+    },
+  },
+};
+
+function ImageContainer({ image, alt }: { image: string; alt: string }) {
+  const imageRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(imageRef, { once: true, amount: 0.5 });
+  return (
+    <motion.div
+      ref={imageRef}
+      variants={fadeInVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className="relative aspect-[1/1.2] w-[60%] max-w-[250px] overflow-hidden rounded-xl lg:min-w-[400px] xl:min-w-[500px]"
+    >
+      <Image
+        src={image}
+        alt={alt}
+        width={2000}
+        height={2000}
+        className="h-full w-full object-cover object-center"
+      />
+    </motion.div>
+  );
+}
 
 export default function About() {
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(aboutRef, { once: true, amount: 0.5 });
   return (
     <section
       id="Nós"
@@ -9,16 +50,17 @@ export default function About() {
     >
       <div className="container mx-auto flex h-full w-[98%] justify-center px-2">
         <div className="flex h-full w-full flex-col items-center justify-between gap-[48px] lg:min-w-screen lg:flex-row lg:justify-center lg:gap-[72px] lg:px-2 xl:gap-[128px]">
-          <div className="aspect-[1/1.2] w-[60%] max-w-[250px] overflow-hidden rounded-xl lg:min-w-[400px] xl:min-w-[500px]">
-            <Image
-              src="/images/general/about-1.webp"
-              alt="colaboradores apertando mão"
-              width={2000}
-              height={2000}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-          <div className="flex h-fit w-[80%] max-w-[500px] flex-col items-center justify-between gap-[16px] text-center lg:min-w-[400px]">
+          <ImageContainer
+            image="/images/general/about-1.webp"
+            alt="colaboradores apertando mão"
+          />
+          <motion.div
+            ref={aboutRef}
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="flex h-fit w-[80%] max-w-[500px] flex-col items-center justify-between gap-[16px] text-center lg:min-w-[400px]"
+          >
             <h2 className="font-primary text-black-blue mb-[8px] max-w-[450px] text-3xl font-medium lg:text-4xl">
               Empoderando equipes{" "}
               <span className="inline-block scale-150 font-light">+</span>{" "}
@@ -43,16 +85,11 @@ export default function About() {
                 </p>
               </Link>
             </button>
-          </div>
-          <div className="aspect-[1/1.2] w-[60%] max-w-[250px] overflow-hidden rounded-xl lg:min-w-[400px] xl:min-w-[500px]">
-            <Image
-              src="/images/general/about-2.webp"
-              alt="colaboradores apertando mão"
-              width={2000}
-              height={2000}
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
+          </motion.div>
+          <ImageContainer
+            image="/images/general/about-2.webp"
+            alt="colaboradora olhando para uma pasta de documentos"
+          />
         </div>
       </div>
     </section>
