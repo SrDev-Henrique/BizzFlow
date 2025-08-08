@@ -14,6 +14,7 @@ import {
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { AnimatedDiv } from "./animated-div";
 
 const createRoomSchema = z.object({
   name: z.string().min(3, { message: "Mínimo de 3 caracteres" }),
@@ -43,89 +44,99 @@ export function CareerForm() {
   }
 
   return (
-    <div className="mx-auto w-[96%] max-w-[500px]">
+    <div className="mx-auto h-fit w-[96%] max-w-[500px]">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmitForm)}
           className="flex flex-col gap-4"
         >
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => {
-              return (
+          <AnimatedDiv>
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
+                      <Input {...field} placeholder="Digite seu nome" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <FormField
+              control={form.control}
+              name="lastName"
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
+                      <Input {...field} placeholder="Digite seu sobrenome" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
+                      <Input {...field} placeholder="Digite o email" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <FormField
+              control={form.control}
+              name="role"
+              render={({ field }) => (
                 <FormItem>
-                  <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
-                    <Input {...field} placeholder="Digite seu nome" />
-                  </FormControl>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger className="bg-white-dark border-black-transparent w-full border">
+                        <SelectValue placeholder="Eu sou um..." />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="developer">Desenvolvedor</SelectItem>
+                      <SelectItem value="designer">Designer</SelectItem>
+                      <SelectItem value="other">Outro</SelectItem>
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
-              );
-            }}
-          />
-          <FormField
-            control={form.control}
-            name="lastName"
-            render={({ field }) => {
-              return (
-                <FormItem>
-                  <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
-                    <Input {...field} placeholder="Digite seu sobrenome" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              );
-            }}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => {
-              return (
-                <FormItem>
-                  <FormControl className="bg-white-dark border-black-transparent h-[50px] w-full border">
-                    <Input {...field} placeholder="Digite o email" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              );
-            }}
-          />
-          <FormField
-            control={form.control}
-            name="role"
-            render={({ field }) => (
-              <FormItem>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="bg-white-dark border-black-transparent w-full border">
-                      <SelectValue placeholder="Eu sou um..." />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="developer">Desenvolvedor</SelectItem>
-                    <SelectItem value="designer">Designer</SelectItem>
-                    <SelectItem value="other">Outro</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="description"
-            render={({ field }) => {
-              return (
-                <FormItem>
-                  <FormControl className="bg-white-dark border-black-transparent h-[100px] w-full border">
-                    <Textarea {...field} placeholder="Digite uma mensagem" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              );
-            }}
-          />
+              )}
+            />
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormControl className="bg-white-dark border-black-transparent h-[100px] w-full border">
+                      <Textarea {...field} placeholder="Digite uma mensagem" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </AnimatedDiv>
           <Button
             type="submit"
             className="h-[50px] w-full cursor-pointer uppercase"
