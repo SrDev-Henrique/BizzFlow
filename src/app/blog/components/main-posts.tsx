@@ -103,7 +103,7 @@ export default async function MainPosts() {
               </CardHeader>
               <CardContent>
                 <p className="line-clamp-3">{post.description}</p>
-                <div className="mt-4 h-full max-h-[225.6px] w-full max-w-[338.4px] overflow-hidden rounded-md">
+                <div className="mt-4 h-full max-h-[225.6px] w-full  overflow-hidden rounded-md">
                   <Image
                     src={urlFor(post.mainImage).url()}
                     alt="Blog 1"
