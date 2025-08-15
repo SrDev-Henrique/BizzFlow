@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
-import { HouseIcon, InboxIcon, SearchIcon } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { HouseIcon, InboxIcon } from "lucide-react";
 import { useWindowScroll } from "react-use";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -23,6 +22,9 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 import { navVariants } from "./anime";
+import FilterButton from "../filter-posts/filter-open-close-button";
+import classNames from "classnames";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const navigationLinks = [
   { href: "/blog", label: "Blog", icon: HouseIcon, active: true, id: "1" },
@@ -30,12 +32,11 @@ const navigationLinks = [
 ];
 
 export default function NavBar() {
-  const id = useId();
   const pathname = usePathname();
-
   const [isNavVisible, setIsNavVisible] = useState(true);
+  const { isFilterOpen, setIsFilterOpen } = useGlobalContext();
 
-  const navContainerRef = useRef<HTMLDivElement>(null);
+  const navContainerRef = useRef<HTMLDivElement | null>(null);
 
   const lastScrollYRef = useRef(0);
 
@@ -52,13 +53,20 @@ export default function NavBar() {
     lastScrollYRef.current = currentScrollY;
   }, [currentScrollY]);
 
+  const handleOpenFilter = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
   return (
     <motion.header
       variants={navVariants}
       initial="visible"
       animate={isNavVisible ? "visible" : "hidden"}
       ref={navContainerRef}
-      className="bg-primary-foreground fixed top-0 right-0 left-0 z-50 mx-auto mt-2 w-[96%] max-w-7xl rounded-xl border-b px-4 md:px-6"
+      className={classNames(
+        "bg-primary-foreground fixed top-0 right-0 left-0 z-50 mx-auto mt-2 w-[96%] max-w-7xl rounded-xl border-b px-4 md:px-6",
+        isNavVisible ? "pointer-events-auto" : "pointer-events-none",
+      )}
     >
       <div className="flex h-16 items-center justify-between gap-4">
         <div className="flex flex-1 items-center gap-2">
@@ -158,18 +166,8 @@ export default function NavBar() {
             })}
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="flex flex-1 items-center justify-end gap-2">
-          <div className="relative">
-            <Input
-              id={id}
-              className="peer h-8 ps-8 pe-2"
-              placeholder="Buscar..."
-              type="search"
-            />
-            <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
-              <SearchIcon size={16} />
-            </div>
-          </div>
+        <div className="flex flex-1 items-center justify-end">
+          <FilterButton onClick={handleOpenFilter} />
         </div>
       </div>
     </motion.header>

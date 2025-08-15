@@ -40,6 +40,12 @@ export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+  }, []);
+
   return (
     <LenisContext.Provider value={{ lenis: lenisRef.current }}>
       {children}
