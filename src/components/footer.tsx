@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/style/noNonNullAssertion: <not necessary> */
 "use client";
 
 import { Input } from "./ui/input";
@@ -122,7 +123,7 @@ export default function Footer() {
                     Ao clicar em &quot;inscrever-se&quot;, você concorda com
                     nossos{" "}
                     <Link
-                      href="/politica-de-privacidade"
+                      href="/termos-de-uso"
                       className="text-primary underline"
                     >
                       Termos de uso
