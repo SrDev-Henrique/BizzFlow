@@ -112,6 +112,7 @@ export default function FilterPosts({ posts }: { posts: SanityPosts[] }) {
                 href={`/blog/${post.currentSlug}`}
                 key={post.currentSlug}
                 className="group"
+                onClick={handleCloseFilter}
               >
                 <div className="flex h-28 items-center gap-2 overflow-hidden md:h-32">
                   <div className="relative h-full w-48 overflow-hidden md:w-56">
